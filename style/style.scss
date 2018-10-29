@@ -17,7 +17,6 @@ $cyan:      rgb(42, 161, 152);
 $green:     rgb(133, 153, 0);
 
 // Global variables.
-$bodyBackground: #36373A;
 $cardObverseBg: top left url('/static/img/wework.png');
 $cardReverseBg: $base03;
 $padding: 12px;
@@ -35,7 +34,7 @@ $shadow: 2px 2px 3px $base3;
 
 body {
   font-family: 'Helvetica Neue', 'Roboto', arial;
-  background-color: $bodyBackground;
+  background-color: $base3;
   color: $base03;
   font-size: 13px;
   margin: 0;
