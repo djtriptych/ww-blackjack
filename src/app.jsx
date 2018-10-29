@@ -9,12 +9,10 @@ import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Board, Card, Hand, Tophat} from 'components';
-import { flipCard } from 'actions';
-import { cardFlips, decks, piles, scores } from 'game';
-import { INITIAL_STATE, PLAYERS } from 'constants.js';
-
-const log = x => { console.log(x) };
+import { Board, Card, Hand, Tophat} from './components';
+import { flipCard } from './actions';
+import { cardFlips, decks, piles, scores } from './game';
+import { INITIAL_STATE, PLAYERS } from './constants.js';
 
 class App extends React.Component {
 

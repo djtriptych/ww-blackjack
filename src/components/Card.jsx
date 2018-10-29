@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ACE, QUEEN, KING, JACK } from 'constants.js';
+import { ACE, QUEEN, KING, JACK } from '../constants.js';
 
 const shortName = (card) => {
   switch(card.value) {

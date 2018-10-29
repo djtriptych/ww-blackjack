@@ -1,7 +1,7 @@
 // Deck of Card API.
 // cf. deckofcardsapi.com
 
-import { NUM_DECKS } from 'constants.js';
+import { NUM_DECKS } from './constants.js';
 
 const DEFAULT_FETCH_OPTIONS = { };
 

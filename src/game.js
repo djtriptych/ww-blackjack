@@ -1,9 +1,9 @@
 // Game and API logic.
 import api from 'api';
-import { actions, Action } from 'actions';
 import Bacon from 'baconjs';
 
-import { ACE, QUEEN, KING, JACK, PLAYERS } from 'constants.js';
+import { actions, Action } from './actions';
+import { ACE, QUEEN, KING, JACK, PLAYERS } from './constants.js';
 
 const scoreForCard = card => {
   // Ignore cards that are facing down.
