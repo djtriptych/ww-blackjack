@@ -1,0 +1,163 @@
+// Solarized color scheme.
+$base3:    rgb(0, 43, 54);
+$base2:    rgb(7, 54, 66);
+$base1:    rgb(88, 110, 117);
+$base0:    rgb(101, 123, 131);
+$base00:   rgb(131, 148, 150);
+$base01:   rgb(147, 161, 161);
+$base02:   rgb(238, 232, 213);
+$base03:   rgb(253, 246, 227);
+$yellow:    rgb(181, 137, 0);
+$orange:    rgb(203, 75, 22);
+$red:       rgb(220, 50, 47);
+$magenta:   rgb(211, 54, 130);
+$violet:    rgb(108, 113, 196);
+$blue:      rgb(38, 139, 210);
+$cyan:      rgb(42, 161, 152);
+$green:     rgb(133, 153, 0);
+
+// Global variables.
+$bodyBackground: #36373A;
+$cardObverseBg: top left url('/static/img/wework.png');
+$cardReverseBg: $base03;
+$padding: 12px;
+$cardWidth: 150px;
+$cardHeight: 250px;
+$cardBorderRadius: 6px;
+$shadow: 2px 2px 3px $base3;
+
+.DIAMONDS, .HEARTS {
+  color: $red;
+}
+.SPADES, .CLUBS {
+  color: $base3;
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Roboto', arial;
+  background-color: $bodyBackground;
+  color: $base03;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+#tophat {
+  padding-top: 1em;
+  .logo {
+    background-size: 40%;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 100;
+    height: 40px;
+    padding-left: 20px;
+    padding-top: 7px;
+    width: 230px;
+    .bar {
+      color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+#board {
+  padding: 30px;
+}
+
+.hand {
+  margin: 8em 0;
+  min-height: $cardHeight;
+  position: relative;
+  header {
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .score {
+      display: block;
+      font-size: 36px;
+      &.bust {
+        color: $red;
+      }
+      &.hittable {
+        color: $base03;
+      }
+    }
+  }
+  .cards {
+    margin-left: 120px;
+    .card {
+      margin-right: -140px;
+    }
+  }
+}
+
+.cardContainer {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: $cardWidth;
+  height: $cardHeight;
+  box-sizing: border-box;
+  margin-right: -120px;
+
+  // Card flip stuff.
+  .front {
+    transform: perspective(500px) rotateY(180deg);
+    background-color: $base03;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: $padding;
+    .short-label {
+      position: absolute;
+      text-align: center;
+      font-weight: bold;
+      font-size: 26px;
+      letter-spacing: -2px;
+      line-height: 20px;
+    }
+    .upper-left-label {
+      top: 6px;
+      left: 6px;
+    }
+    .lower-right-label {
+      bottom: 6px;
+      right: 6px;
+      transform: rotate(180deg);
+    }
+    .big-suit {
+      font-size: 80px;
+      text-align: center;
+      line-height: 200px;
+    }
+  }
+
+  .back {
+    padding: $padding;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $cardObverseBg;
+    background-size: 30%;
+    border: 1px solid transparent;
+    &:hover {
+      border-color: $red;
+    }
+  }
+
+  .front, .back {
+    backface-visibility: hidden;
+    box-shadow: 0 0 3px $base3;
+    border-radius: $cardBorderRadius;
+    transition: 0.4s transform;
+  }
+
+  &.facing-up {
+    .front {
+      transform: perspective(500px) rotateY(0);
+    }
+    .back {
+      transform: perspective(500px) rotateY(-180deg);
+    }
+  }
+}
